@@ -194,6 +194,9 @@ body {
 }
 //section about start
 .about {
+  .burger-menu {
+    display: none;
+  }
   padding-bottom: 120px;
   .fixed {
     position: fixed;
@@ -201,9 +204,11 @@ body {
 
     width: 100%;
   }
+
   .clone-nav {
     text-align: center;
   }
+
   // background: rgba(5, 59, 151, 0.2);
   &-inner {
     position: relative;
@@ -267,6 +272,8 @@ body {
       margin: 0 0 20px;
       &__icon {
         margin: 0 0 15px;
+        justify-content: center;
+        display: flex;
       }
       &__title {
         margin: 0 0 15px;

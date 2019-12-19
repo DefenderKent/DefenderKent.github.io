@@ -156,7 +156,25 @@ $(document).ready(function() {
 
   $(".works-slider").slick({
     slidesToShow: 2,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: { arrows: false, slidesToShow: 1 }
+      },
+      {
+        breakpoint: 900,
+        settings: { arrows: false, slidesToShow: 1 }
+      },
+      {
+        breakpoint: 720,
+        settings: { arrows: false, slidesToShow: 1, crnterMode: true }
+      }
+
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
   });
   $(document).ready(function() {
     var navPos, winPos, navHeight;
@@ -320,6 +338,39 @@ $(document).ready(function() {
     function getRandom(min, max) {
       return Math.random() * (max - min) + min;
     }
+  });
+  $(".row").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          crnterMode: true
+        }
+      }
+
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+  $(".burger-menu").on("click", function() {
+    $(".menu-list").slideToggle();
   });
   new WOW().init();
 });
