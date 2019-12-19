@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Барбершоп</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap&subset=cyrillic-ext"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="inner-page"> 
+    <header class="main-header">
+      <div class="container clearfix" >
+
+        <nav class="main-novigator">
+          <a class="logo-inner" href="index.html">
+            <img src="img/inner-logo.png" width="111" height="24" alt="">
+          </a>
+          <ul>
+            <li>
+              <a href="#">Информация</a>
+            </li>
+            <li>
+              <a href="#">Новости</a>
+            </li>
+            <li class="active">
+              <a href="#"><span>Прайс-лист</span></a>
+            </li>
+            <li>
+              <a href="#">Магазин</a>
+            </li>
+            <li>
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="user-block">
+          <a class="login" href="#">Вход</a>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="inner-page-title">
+        <h1>Прайс-лист</h1>
+        <ul class="breaddcrumbs">
+          <li> 
+            <a href="index.html">Главная</a>
+          </li>
+            <li class="current">Прайс-лист</li>
+          </ul>
+      </div>
+      <div class="inner-content">
+        <div class="big-heading">
+          <h2>Истинно мужская классика 
+              </h2>
+        </div>
+        <div class="inner-columns clearfix">
+          <div class="inner-column-left">
+        <h2>Мы используем только<br> лучшие средства:
+          </h2>
+        <ul class="custom-list-1">
+          <li>Baxter of California</li>
+          <li>Baxter of California</li>
+          <li>Baxter of California</li>
+          <li>Baxter of California</li>
+        </ul>
+        </div>
+        <div class="inner-column-right">
+        <h2>
+          Цены на услугт<br> наших мастеров:
+        </h2>
+        <table class="price-table">
+        <tr>
+          <td>Стрижка</td>
+          <td>1500 р.</td>
+        </tr>
+        <tr>
+            <td>Стрижка</td>
+            <td>1500 р.</td>
+        </tr>
+        <tr>
+            <td>Стрижка</td>
+            <td>1500 р.</td>
+        </tr>
+      </table>
+     </div>
+    </div>
+    <div class="inner-columns clearfix">
+      <h2>Несколько слов о нас:</h2>
+      <div class="inner-column-left">
+      <p class="short-text">
+          Наша парикмахерская занимается исключительно мужскими стрижками.
+          Стрижка каждого клиента для нас - это уникальная и продуманная до 
+          мелочей работа. Мы не работаем на количество, мы делаем качество.
+          
+      </p>
+    </div>
+    <div class="inner-column-right">
+      <p class="short-text">
+          Наша парикмахерская занимается исключительно мужскими стрижками.
+          Стрижка каждого клиента для нас - это уникальная и продуманная до 
+          мелочей работа. Мы не работаем на количество, мы делаем качество.
+          
+      </p>
+         </div>
+        </div>
+       </div>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <div class="container clearfix">
+        <section class="footer-contacts">
+          Барбершоп "Бородинский"<br />
+          Адрес: г. Асино, ул. Андрея Свинопасова, д. 12 <br />
+          <a href="#">Как нас найти?</a><br />
+          Телефон: 8 800200601
+        </section>
+        <section class="footer-social">
+          <p>Давайте дружить!</p>
+          <a href="#" class="social-btn social-btn-vk">Вконтакте</a>
+          <a href="#" class="social-btn social-btn-fb">Фейсбук</a>
+          <a href="#" class="social-btn social-btn-inst">Инстаграм</a>
+        </section>
+        <section class="footer-copyright">
+          <a href="#" class="btn">Kentinc</a>
+        </section>
+      </div>
+    </footer>
+    <div class="modal-content">
+        <button class="modal-content-close" type="button" title="Закрыть">
+          Закрыть
+        </button>
+        <h2 class="modal-content-title">Личный кабинет</h2>
+        <p>Введите свой логин и пароль.</p>
+        <form class="login-form" action="#" method="POST">
+          <input class="icon-user" type="text" name="login" placeholder="Логин" />
+          <input
+            type="password"
+            class="icon-password"
+            name="password"
+            placeholder="Пароль"
+          />
+          <input type="checkbox" name="remember" id="remember-me" />
+          <label class="login-checkbox" for="remember-me">
+            <span class="checkbox-indicator"></span>
+            Запомните меня!
+          </label>
+          <a href="#" class="restore">Я забыл пароль!</a>
+          <button class="btn" type="submit">Войти</button>
+        </form>
+        <div class="modal-content-map">
+          <button class="modal-content-close" type="button" title="Закрыть">
+            Закрыть
+          </button>
+          <div id="map"></div>
+        </div>
+        <div class="modal-overlay"></div>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

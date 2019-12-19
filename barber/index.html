@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Барбершоп</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap&subset=cyrillic-ext"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container clearfix">
+        <nav class="main-novigator">
+          <ul>
+            <li>
+              <a href="#">Информация</a>
+            </li>
+            <li>
+              <a href="#">Новости</a>
+            </li>
+            <li>
+              <a href="price.html">Прайс-лист</a>
+            </li>
+            <li>
+              <a href="item.html">Магазин</a>
+            </li>
+            <li>
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="user-block">
+          <a class="login" href="#">Вход</a>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="index-logo">
+        <img src="img/borlogo.png" width="368" height="204" alt="Барбершоп" />
+      </div>
+      <section class="features clearfix">
+        <div class="features-item">
+          <b class="features-name">Быстро</b>
+          <p>
+            Мы делаем свою работу быстро! Два часа пролетят незаметно и вы -
+            счастливый обладатель стильной стрижки-минутки!
+          </p>
+        </div>
+        <div class="features-item">
+          <b class="features-name">Круто</b>
+          <p>
+            Мы делаем свою работу быстро! Два часа пролетят незаметно и вы -
+            счастливый обладатель стильной стрижки-минутки!
+          </p>
+        </div>
+        <div class="features-item">
+          <b class="features-name">Дорого</b>
+          <p>
+            Мы делаем свою работу быстро! Два часа пролетят незаметно и вы -
+            счастливый обладатель стильной стрижки-минутки!
+          </p>
+        </div>
+      </section>
+      <div class="index-content clearfix">
+        <div class="index-content-left">
+          <h2 class="index-content-title">Новости</h2>
+          <ul class="news-preview">
+            <li>
+              <p>
+                Нам наконец завезли Ягермастер! Теперь вы можете пропустить
+                стаканчик во время стрижки
+              </p>
+              <time datetime="2019-01-11">11 января</time>
+            </li>
+            <li>
+              <p>
+                Нам наконец завезли Ягермастер! Теперь вы можете пропустить
+                стаканчик во время стрижки
+              </p>
+              <time datetime="2019-01-11">11 января</time>
+            </li>
+          </ul>
+          <a href="#" class="btn">Все новости</a>
+        </div>
+        <div class="index-content-right">
+          <h2 class="index-content-title">Фотогалерея</h2>
+          <div class="gallery">
+            <figure class="gallery-content">
+              <img src="img/news-bg.png" width="286" height="164" alt="" />
+            </figure>
+            <button class="btn gallery-prev">Назад</button>
+            <button class="btn gallery-next">Вперед</button>
+          </div>
+        </div>
+      </div>
+      <div class="index-content clearfix">
+        <div class="index-content-left">
+          <h2 class="index-content-title">Контактная информация</h2>
+          <p>
+            Барбершоп "Бородинский"<br />
+            Адрес: г. Асино, ул. Андрея Свинопасова, д. 12 <br />
+            Телефон:8 800200601
+          </p>
+          <p>
+            Время работы: <br />
+            пн-пт: с 10:00 до 22:00 <br />
+            сб-вс: с 100:00 до 19:00
+          </p>
+          <a href="#" class="btn js-open-map">Как проехать</a>
+          <a href="#" class="btn">Обратная связь</a>
+        </div>
+        <div class="index-content-right">
+          <h2 class="index-content-title">Записаться</h2>
+          <p>
+            Укажите желаемую дату и время и мы свяжемся с вами для подтверждения
+            брони
+          </p>
+          <form class="appointment-form" action="#" method="POST">
+            <input type="text" name="date" value="" placeholder="Дата" />
+            <input type="text" name="time" value="" placeholder="Время" />
+            <input type="text" name="name" value="" placeholder="Ваше имя" />
+            <input type="tel" name="phone" value="" placeholder="Телефон" />
+            <button class="btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <div class="container clearfix">
+        <section class="footer-contacts">
+          Барбершоп "Бородинский"<br />
+          Адрес: г. Асино, ул. Андрея Свинопасова, д. 12 <br />
+          <a href="#">Как нас найти?</a><br />
+          Телефон: 8 800200601
+        </section>
+        <section class="footer-social">
+          <p>Давайте дружить!</p>
+          <a href="#" class="social-btn social-btn-vk">Вконтакте</a>
+          <a href="#" class="social-btn social-btn-fb">Фейсбук</a>
+          <a href="#" class="social-btn social-btn-inst">Инстаграм</a>
+        </section>
+        <section class="footer-copyright">
+          <a href="#" class="btn">Kentinc</a>
+        </section>
+      </div>
+    </footer>
+    <div class="modal-content">
+      <button class="modal-content-close" type="button" title="Закрыть">
+        Закрыть
+      </button>
+      <h2 class="modal-content-title">Личный кабинет</h2>
+      <p>Введите свой логин и пароль.</p>
+      <form class="login-form" action="#" method="POST">
+        <input class="icon-user" type="text" name="login" placeholder="Логин" />
+        <input
+          type="password"
+          class="icon-password"
+          name="password"
+          placeholder="Пароль"
+        />
+        <input type="checkbox" name="remember" id="remember-me" />
+        <label class="login-checkbox" for="remember-me">
+          <span class="checkbox-indicator"></span>
+          Запомните меня!
+        </label>
+        <a href="#" class="restore">Я забыл пароль!</a>
+        <button class="btn" type="submit">Войти</button>
+      </form>
+    </div>
+    <div class="modal-content-map">
+      <button class="modal-content-close" type="button" title="Закрыть">
+        Закрыть
+      </button>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11590.332222936211!2d39.92277212432862!3d43.42753735372766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1575368172208!5m2!1sru!2sru"
+        width="600"
+        height="450"
+        frameborder="0"
+        style="border:0;"
+        allowfullscreen=""
+      ></iframe>
+      <div id="map"></div>
+    </div>
+    <div class="modal-overlay"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
