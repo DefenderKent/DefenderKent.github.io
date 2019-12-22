@@ -52,6 +52,15 @@
   .flip-wrap {
     display: contents;
   }
+  .header {
+    .title {
+      width: 300px;
+      font-size: 15px;
+      span {
+        font-size: 31px;
+      }
+    }
+  }
 }
 
 @media (max-width: 530px) {
@@ -65,7 +74,14 @@
     }
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 500px) {
+  body {
+    .particles-js-canvas-el {
+      display: none;
+    }
+  }
+  @media (max-width: 360px) {
+  }
   .header {
     .title {
       line-height: 42px;
