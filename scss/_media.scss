@@ -61,6 +61,11 @@
       }
     }
   }
+  body {
+    .particles-js-canvas-el {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 530px) {
