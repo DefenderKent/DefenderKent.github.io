@@ -44,11 +44,6 @@
     }
     background: #c4d4d4dc;
   }
-  body {
-    .particles-js-canvas-el {
-      display: none;
-    }
-  }
 }
 @media (max-width: 600px) {
   .cintent-wrap {
@@ -67,7 +62,7 @@
     }
   }
   body {
-    .particles-js-canvas-el {
+    canvas {
       display: none;
     }
   }
@@ -86,9 +81,6 @@
 }
 @media (max-width: 500px) {
   body {
-    .particles-js-canvas-el {
-      display: none;
-    }
   }
   @media (max-width: 360px) {
   }
