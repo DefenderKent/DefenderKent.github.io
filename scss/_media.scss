@@ -44,6 +44,11 @@
     }
     background: #c4d4d4dc;
   }
+  body {
+    .particles-js-canvas-el {
+      display: none;
+    }
+  }
 }
 @media (max-width: 600px) {
   .cintent-wrap {
