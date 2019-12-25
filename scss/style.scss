@@ -401,6 +401,29 @@ body {
 
   left: 548px;
 }
+.slick-dots {
+  position: absolute;
+  bottom: -4px;
+  left: 477px;
+  z-index: 5;
+  display: flex;
+  font-size: 0;
+  .slick-active {
+    button {
+      background: #e4b800;
+    }
+  }
+  button {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+
+    border-radius: 50%;
+  }
+  li {
+    list-style: none;
+  }
+}
 //section works end
 //section skills start
 .skills {

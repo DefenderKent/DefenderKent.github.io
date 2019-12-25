@@ -155,6 +155,7 @@ $(document).ready(function() {
   });
 
   $(".works-slider").slick({
+    dots: true,
     slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
