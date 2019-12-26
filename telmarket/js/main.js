@@ -8,4 +8,8 @@ $(function() {
     slidesToScroll: 1,
     dots: true
   });
+  $(".catalog-slider").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1
+  });
 });
