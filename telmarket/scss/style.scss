@@ -540,8 +540,10 @@ ul {
 .conteiner-c {
   max-width: 830px;
 }
+.advantages1 {
+  padding-bottom: 40px;
+}
 .advantages {
-  padding-top: 35px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 30px;
@@ -790,6 +792,143 @@ ul {
   position: absolute;
   background-image: url(../img/new-bg.png);
   background-repeat: no-repeat;
+}
+.baynow {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.container {
+}
+.title {
+  text-transform: uppercase;
+  // .title__name
+
+  &__name {
+  }
+
+  // .title__line
+
+  &__line {
+  }
+}
+.baynow-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.baynow-item {
+  // .baynow-item__img
+
+  &__img {
+    padding-bottom: 38px;
+  }
+
+  // .baynow-item__name
+
+  &__name {
+    max-width: 151px;
+    padding-bottom: 23px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4673ab;
+    text-decoration: underline;
+  }
+}
+.footer {
+  padding-bottom: 40px;
+  font-weight: 300;
+  a {
+    font-size: 13px;
+    font-weight: 300;
+    text-decoration: underline;
+  }
+  font-size: 13px;
+  background: #5c7489;
+}
+.container {
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 40px;
+  .info-wrap-contact {
+    padding-top: 0;
+    // .info-wrap-contact__img
+
+    &__img {
+    }
+
+    // .info-wrap-contact__tell
+
+    &__tell {
+    }
+
+    // .info-wrap-contact__number
+
+    &__number {
+      font-size: 19px;
+    }
+
+    // .info-wrap-contact__date
+
+    &__date {
+    }
+
+    // .info-wrap-contact__numder2
+
+    &__numder2 {
+    }
+
+    // .info-wrap-contact__mail
+
+    &__mail {
+      color: #fff;
+    }
+  }
+}
+.footer-inner-logo {
+  color: #c8d4dc;
+  p {
+    padding-top: 10px;
+    max-width: 235px;
+  }
+}
+.footer-inner-text {
+  color: #c8d4dc;
+  line-height: 18px;
+}
+.footer-inner-list {
+  a {
+    padding-bottom: 10px;
+  }
+}
+.footer-inner-call {
+  color: #fff;
+}
+
+.unerfooter {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #2c3f53;
+}
+.container {
+}
+.unerfooter-wrap {
+  font-size: 13px;
+  color: #b3c0ca;
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 300;
+  // .unerfooter-wrap__text
+
+  &__text {
+    max-width: 773px;
+  }
+
+  // .unerfooter-wrap__img
+
+  &__img {
+  }
 }
 
 @import "media";
