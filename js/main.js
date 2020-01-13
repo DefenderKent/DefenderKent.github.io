@@ -373,5 +373,14 @@ $(document).ready(function() {
   $(".burger-menu").on("click", function() {
     $(".menu-list").slideToggle();
   });
+
+  $(".popup-content2").on("click", function() {
+    $(".popup-content2").addClass("pop-show");
+    $(".popup-content").addClass("pop-show2");
+  });
+  $(".btn_popup").on("click", function() {
+    $(".popup-content").removeClass("pop-show2");
+  });
+
   new WOW().init();
 });
