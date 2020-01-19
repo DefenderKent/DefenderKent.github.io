@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>anketa</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Courier+Prime|PT+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <!-- start anketa -->
+    <section class="anketa">
+      <div class="container">
+        <div
+          class="anketa-main"
+          style="background-image: url(img/main-bg.png); height: 1313px "
+        >
+          <div class="anketa-logo"><img src="img/logo.png" alt="" /></div>
+          <div class="anketa-main-title">
+            <img src="img/title.png" alt="" />
+          </div>
+          <!--anketa-main-info  -->
+          <div class="anketa-main-info">
+            <div class="anketa-main-wrap anketa-main-wrap1">
+              <label for="fullName" style="width:151px;">Полное ФИО</label>
+              <input
+                type="text"
+                id="fullName"
+                name="name"
+                value="Кондратьев Иннокентий Сергеевич"
+              />
+            </div>
+
+            <div class="anketa-main-wrap anketa-main-wrap2">
+              <label for="year" style="width:176px;">Год рождения:</label>
+              <input type="text" id="year" name="year" value="1995" />
+            </div>
+
+            <div class="anketa-main-wrap anketa-main-wrap3">
+              <label for="live" style="width:239px;">Место жительства:</label>
+              <input type="text" id="live" name="live" value="г.Томск" />
+            </div>
+
+            <div class="anketa-main-wrap anketa-main-wrap4">
+              <label for="skype">Скайп:</label>
+              <input type="text" id="skype" name="skype" value="skype" />
+            </div>
+
+            <div class="anketa-main-wrap anketa-main-wrap4">
+              <label for="mail">Почта:</label>
+              <input
+                type="text"
+                id="mail"
+                name="mail"
+                value="innokentiykondratev@mail.ru"
+              />
+            </div>
+          </div>
+          <!-- /anketa-main-info -->
+
+          <!-- anketa-main-descr -->
+          <div class="anketa-main-descr">
+            <div class="anketa-main-descr__title">
+              Расскажите о себе чекбоксами
+            </div>
+            <div class="anketa-main-descr__text">
+              Отметьте чекбоксами пункты, которые соответствуют вашим скиллам.
+              Отсутствие опыта не означает, что у вас меньше шансов стать одним
+              из наших товарищей. Это означает, что вы будете получать те
+              задачи, с которыми гарантировано будете справляться.
+            </div>
+            <!-- checkboxs -->
+            <div class="anketa-main-descr-inner">
+              <div class="anketa-main-descr__chek box1">
+                <input type="checkbox" checked id="js" />
+                <label for="js">Методология БЭМ</label>
+              </div>
+              <div class="anketa-main-descr__chek box2">
+                <input type="checkbox" checked id="bam" />
+                <label for="bam">jQuery</label>
+              </div>
+              <div class="anketa-main-descr__chek box3">
+                <input type="checkbox" id="haml" />
+                <label for="haml">HAML</label>
+              </div>
+              <div class="anketa-main-descr__chek box4">
+                <input type="checkbox" checked id="sass" />
+                <label for="sass">SASS</label>
+              </div>
+              <div class="anketa-main-descr__chek box5">
+                <input type="checkbox" id="less" />
+                <label for="less">LESS</label>
+              </div>
+              <div class="anketa-main-descr__chek box6">
+                <input type="checkbox" id="jade" />
+                <label for="jade">jade</label>
+              </div>
+              <div class="anketa-main-descr__chek box7">
+                <input type="checkbox" id="stylus" />
+                <label for="stylus">Stylus</label>
+              </div>
+              <div class="anketa-main-descr__chek box8">
+                <input type="checkbox" id="angular" />
+                <label for="angular">Знаю(изучаю) Angular</label>
+              </div>
+              <div class="anketa-main-descr__chek box9">
+                <input type="checkbox" checked id="verst" />
+                <label for="verst">Верстка рассылок</label>
+              </div>
+              <div class="anketa-main-descr__chek box10">
+                <input type="checkbox" checked id="adaptiv" />
+                <label for="adaptiv">Адаптивная верстка</label>
+              </div>
+            </div>
+            <!-- /checkboxs -->
+
+            <!-- mainSlider -->
+            <div class="dslider">
+              <div class="anketa-main-descr-skills">
+                <div class="anketa-main-descr__title">
+                  Уровень владения JavaScript
+                </div>
+                <div class="anketa-main-descr__slider">
+                  <div class="anketa-main-descr__wrap">
+                    <div class="anketa-main-descr__item itemcostom">
+                      <label for="ican"
+                        >Не владею
+                        <input
+                          class="check"
+                          type="radio"
+                          name="name1"
+                          id="ican"
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                    <div class="anketa-main-descr__item itemcostom2">
+                      <label for="result"
+                        >Использую готовые решения
+                        <input
+                          class="check"
+                          type="radio"
+                          name="name1"
+                          id="result"
+                          checked
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                    <div class="anketa-main-descr__item itemcostom3">
+                      <label for="result22"
+                        >Использую готовые решения <br />
+                        и умею их переделывать
+                        <input
+                          class="check"
+                          type="radio"
+                          id="result22"
+                          name="name1"
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                    <div class="anketa-main-descr__item itemcostom4">
+                      <label for="ican2"
+                        >Пишу сложный JS с нуля
+                        <input
+                          class="check"
+                          type="radio"
+                          id="ican2"
+                          name="name1"
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="anketa-main-descr-skills">
+                <div class="anketa-main-descr__title">
+                  Уровень владения PHP
+                </div>
+                <div class="anketa-main-descr__slider">
+                  <div class="anketa-main-descr__wrap">
+                    <div class="anketa-main-descr__item itemcostom">
+                      <label for="ican3"
+                        >Не владею
+                        <input
+                          class="check"
+                          type="radio"
+                          name="name2"
+                          id="ican3"
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                    <div class="anketa-main-descr__item itemcostom2">
+                      <label for="result2"
+                        >Использую готовые решения
+                        <input
+                          class="check"
+                          type="radio"
+                          name="name2"
+                          id="result2"
+                          checked
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                    <div class="anketa-main-descr__item itemcostom3">
+                      <label for="result3"
+                        >Использую готовые решения <br />
+                        и умею их переделывать
+                        <input
+                          class="check"
+                          type="radio"
+                          id="result3"
+                          name="name2"
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                    <div class="anketa-main-descr__item itemcostom4">
+                      <label for="ican4"
+                        >Пишу сложный PHP с нуля
+                        <input
+                          class="check"
+                          type="radio"
+                          id="ican4"
+                          name="name2"
+                        />
+                        <span class="fake"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /mainSlider -->
+            <div class="date">
+              <div class="anketa-main-wrap">
+                <label for="date20" style="width:215px;">Дата заполнения</label>
+                <input type="text" id="date20" name="name" value="20.01.2020" />
+              </div>
+            </div>
+          </div>
+          <!-- /anketa-main-descr -->
+        </div>
+      </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

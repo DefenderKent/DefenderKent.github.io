@@ -1,0 +1,80 @@
+// тут на мобилку версия (320)
+@media (max-width: 920px) {
+  .anketa-main-info {
+    margin-left: 10px;
+  }
+  .anketa-main-wrap::after {
+    max-width: 400px !important;
+    left: 100px;
+  }
+  .anketa-main-wrap input {
+    font-size: 20px;
+  }
+}
+@media (max-width: 530px) {
+  .anketa-main-wrap::after {
+    max-width: 200px !important;
+    left: 100px;
+  }
+  .anketa-main-wrap input {
+    padding-left: 0;
+  }
+}
+@media (max-width: 320px) {
+  .anketa-main-wrap::after {
+    max-width: 271px !important;
+    left: 0;
+  }
+  .anketa-main-wrap input {
+    font-size: 17px;
+  }
+  .anketa-main-wrap {
+    flex-direction: column;
+  }
+  .anketa-main-descr {
+    margin-left: 0px;
+  }
+  .box5 {
+    label {
+      top: 119px;
+      left: 0;
+    }
+  }
+
+  .slick-track {
+    display: none;
+  }
+  .anketa-main {
+    height: 1500px !important;
+
+    background-repeat: repeat-y;
+  }
+  .box6 {
+    label {
+      top: 140px;
+      left: 0px;
+    }
+  }
+  .box7 label {
+    top: 161px;
+    left: 0px;
+  }
+  .box8 label {
+    top: 181px;
+    right: 64px;
+  }
+  .box9 label {
+    top: 206px;
+    right: 99px;
+  }
+  .box10 label {
+    top: 233px;
+    right: 64px;
+  }
+  .date {
+    .anketa-main-wrap::after {
+      width: 205px;
+      left: 0;
+    }
+  }
+}

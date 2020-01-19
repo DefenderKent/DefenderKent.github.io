@@ -1,0 +1,324 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+html,
+body {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.anketa {
+  background: url(../img/fon.png);
+}
+.container {
+  max-width: 1021px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.anketa-main {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.anketa-logo {
+  padding-top: 48px;
+  margin-left: 117px;
+  margin-bottom: 24px;
+}
+.anketa-main-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.anketa-main-info {
+  margin-left: 117px;
+  max-width: 770px;
+  margin-bottom: 70px;
+  label {
+    display: inline-block;
+  }
+}
+.anketa-main-wrap1 {
+  &::after {
+    width: 625px !important;
+  }
+}
+.anketa-main-wrap2 {
+  &::after {
+    width: 610px !important;
+  }
+}
+.anketa-main-wrap3 {
+  &::after {
+    width: 575px !important;
+  }
+}
+.anketa-main-wrap4 {
+  &::after {
+    width: 695px !important;
+  }
+}
+.anketa-main-wrap {
+  display: flex;
+  position: relative;
+  margin-bottom: 40px;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 700px;
+    height: 10px;
+    background: url(../img/border_3.png);
+  }
+  input {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    z-index: 3;
+    font-size: 30px;
+    font-family: "Courier Prime";
+    font-weight: 400;
+    padding-left: 32px;
+    padding-bottom: 7px;
+    color: #231f20;
+  }
+  label {
+    font-size: 22px;
+    font-family: "PT Sans";
+    font-weight: bold;
+    color: #2f1b15;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+.anketa-main-descr {
+  font-family: "PT Sans";
+  margin-left: 117px;
+  &__title {
+    font-size: 22px;
+
+    font-weight: bold;
+    color: #2f1b15;
+    margin-bottom: 10px;
+  }
+  &__text {
+    max-width: 770px;
+    font-weight: normal;
+    color: #3d3d3d;
+  }
+  &__chek {
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    // // label {
+    // //   &::before {
+    // //     content: "";
+    // //     margin-right: 10px;
+    // //     display: inline-block;
+    // //     width: 19px;
+    // //     height: 19px;
+    // //     background: url(../img/check-border.png);
+    // //   }
+    // }
+  }
+}
+.anketa-main-descr__chek {
+  position: relative;
+  max-width: 770px;
+  padding-top: 8px;
+  label {
+    z-index: 4;
+    font-size: 21px;
+    font-family: "PT Sans";
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+}
+.box1 {
+  label {
+    width: 200px !important;
+    top: 25px;
+  }
+}
+.box2 {
+  label {
+    top: 50px;
+  }
+}
+.box3 {
+  label {
+    top: 76px;
+  }
+}
+.box4 {
+  label {
+    top: 100px;
+  }
+}
+.box5 {
+  label {
+    top: -7px;
+    left: 260px;
+  }
+}
+.box6 {
+  label {
+    top: 18px;
+    left: 260px;
+  }
+}
+.box7 {
+  label {
+    top: 44px;
+    left: 260px;
+  }
+}
+.box8 {
+  label {
+    top: -30px;
+    right: 0;
+    width: 235px !important;
+  }
+}
+.box9 {
+  label {
+    top: -6px;
+    right: 35px;
+    width: 200px !important;
+  }
+}
+.box10 {
+  label {
+    top: 20px;
+    right: 0px;
+    width: 235px !important;
+  }
+}
+.anketa-main-descr__chek input[type="checkbox"] + label {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: url(../img/check-border.png);
+  padding-left: 30px;
+  background-repeat: no-repeat;
+}
+.anketa-main-descr__chek input[type="checkbox"]:checked + label {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: 0px;
+    width: 21px;
+    height: 27px;
+    z-index: 3;
+    background-image: url(../img/point.png);
+  }
+}
+.anketa-main-descr-inner {
+  height: 142px;
+  margin-bottom: 50px;
+}
+
+.anketa-main-descr__wrap {
+  font-size: 13px;
+  font-family: "PT Sans";
+  font-weight: bold;
+  display: flex;
+  max-width: 770px;
+  padding-top: 57px;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../img/slider.png);
+    width: 774px;
+    height: 60px;
+    top: 6px;
+    right: 3px;
+  }
+}
+.anketa-main-descr__item {
+  input[type="radio"] {
+    display: none;
+  }
+  .fake {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 17px;
+      height: 14px;
+      background-image: url(../img/cech.png);
+      opacity: 0;
+    }
+  }
+  .check:checked + .fake::before {
+    opacity: 1;
+  }
+}
+.itemcostom {
+  margin-right: 62px;
+  .fake::before {
+    bottom: 48px;
+    right: 74px;
+  }
+}
+.itemcostom2 {
+  margin-right: 38px;
+  .fake::before {
+    bottom: 48px;
+    right: 180px;
+  }
+}
+.itemcostom3 {
+  margin-right: 89px;
+  .fake::before {
+    bottom: 63px;
+    right: 158px;
+  }
+}
+.itemcostom4 {
+  .fake {
+    display: block;
+  }
+
+  .fake::before {
+    bottom: 60px;
+    left: 127px;
+  }
+}
+.date {
+  max-width: 770px;
+
+  .anketa-main-wrap::after {
+    width: 205px;
+    left: 182px;
+  }
+  .anketa-main-wrap input {
+    padding-left: 28px;
+  }
+}
+.anketa-main-descr-skills {
+  margin-bottom: 49px;
+}
+
+.slick-slide {
+  width: 891px !important;
+}
+.slick-list {
+  height: 180px;
+}
+@import "media";
