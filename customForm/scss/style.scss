@@ -1,0 +1,84 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+form {
+  margin: 10px auto;
+  padding: 30px;
+  max-width: 700px;
+  border: 2px solid #429aff;
+  border-radius: 10px;
+  button {
+    width: 160px;
+    border: 1px solid #429aff;
+    background: none;
+    padding: 10px;
+    transition: 0.5s;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      transition: 0.5s;
+      background-color: #429aff;
+      color: #fff;
+    }
+  }
+}
+.title {
+  padding-left: 30px;
+  h2 {
+    font-size: 30px;
+    color: #66757f;
+  }
+}
+.container {
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.inputcustom {
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #429aff;
+    margin-bottom: 20px;
+    outline: none;
+  }
+}
+.labelcustom {
+  width: 100%;
+  margin-bottom: 10px;
+  color: hsl(204, 100%, 54%);
+}
+.ref {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  a {
+    color: #737373;
+    transition: 0.5s;
+    &:hover {
+      color: #4a3d3d;
+      transition: 0.5s;
+    }
+  }
+}
+@import "media";
