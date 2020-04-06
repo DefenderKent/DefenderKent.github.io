@@ -25,8 +25,8 @@ class formCustom {
     }
     return this.data.fields.map(this.inputCreator).join("");
   };
-  inputCreator = f => {
-    const getMask = f => {
+  inputCreator = fields => {
+    const getMask = fields => {
       $(function() {
         var phoneMask = IMask(document.getElementById("phone-mask"), {
           mask: "+{7}(000)000-00-00"
@@ -38,102 +38,115 @@ class formCustom {
           mask: "000-000"
         });
       });
-      switch (f.input.mask) {
+      switch (fields.input.mask) {
         case numberPhone:
           return `<input id="phone-mask"
-          type="${f.input.type === "number" ? "text" : f.input.type}" 
-        placeholder="${f.input.mask}" >
+          type="${fields.input.type === "number" ? "text" : fields.input.type}" 
+        placeholder="${fields.input.mask}" >
         `;
         case pasport:
           return `<input id="pasport-mask"
-          type="${f.input.type === "number" ? "text" : f.input.type}" 
-        placeholder="${f.input.mask}" >
+          type="${fields.input.type === "number" ? "text" : fields.input.type}" 
+        placeholder="${fields.input.mask}" >
         `;
         case unitCode:
           return `<input id="unitCode-mask"
-          type="${f.input.type === "number" ? "text" : f.input.type}" 
-        placeholder="${f.input.mask}" >
+          type="${fields.input.type === "number" ? "text" : fields.input.type}" 
+        placeholder="${fields.input.mask}" >
         `;
         default:
           return "";
       }
     };
-    if (f.input.colors !== undefined) {
+    if (fields.input.colors !== undefined) {
       return `<div class="labelcustom">
-                    <label>${f.label === undefined ? "" : f.label + ":"}</label>
+                    <label>${
+                      fields.label === undefined ? "" : fields.label + ":"
+                    }</label>
               
                       <input
                         list="optionList"
-                        type="${f.input.type}" 
-                        placeholder="${f.input.placeholder}"
-                        required=${f.input.required}/>
+                        type="${fields.input.type}" 
+                        placeholder="${fields.input.placeholder}"
+                        required=${fields.input.required}
+                        value="${fields.input.colors[0]}"
+                        />
+                        
                       <datalist id="optionList">
-                        <option value=${f.input.colors[0]}></option>
-                        <option value=${f.input.colors[1]}></option>
-                        <option value=${f.input.colors[2]}></option>
-                        <option value=${f.input.colors[3]}></option>
+                        <option value=${fields.input.colors[0]}></option>
+                        <option value=${fields.input.colors[1]}></option>
+                        <option value=${fields.input.colors[2]}></option>
+                        <option value=${fields.input.colors[3]}></option>
                       </datalist>
-                      
+                     
                   </div> `;
+    } else if (fields.label === "Turn on dark theme?") {
+      return `<div class="colorCheckbox">
+      <label>${fields.label === undefined ? "" : fields.label + ":"}
+           </label><input type="${fields.input.type}">
+        </div>`;
     }
+
     return `<div class="inputcustom"><label>${
-      f.label === undefined ? "" : f.label + ":"
+      fields.label === undefined ? "" : fields.label + ":"
     }</label>
                       ${
-                        f.input.mask !== undefined
-                          ? getMask(f)
+                        fields.input.mask !== undefined
+                          ? getMask(fields)
                           : `${
-                              f.input.type === "technology"
+                              fields.input.type === "technology"
                                 ? `<div class="technology-wrap">
-                                      <div>
-                                        <label for="php">${f.input.technologies[0]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="php">${fields.input.technologies[0]}</label>
                                         <input id="php" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="js">${f.input.technologies[1]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="js">${fields.input.technologies[1]}</label>
                                         <input id="js" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="Laravel">${f.input.technologies[2]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="Laravel">${fields.input.technologies[2]}</label>
                                         <input id="Laravel" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="Express">${f.input.technologies[3]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="Express">${fields.input.technologies[3]}</label>
                                         <input id="Express" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="Yii2">${f.input.technologies[4]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="Yii2">${fields.input.technologies[4]}</label>
                                         <input id="Yii2" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="HTML">${f.input.technologies[5]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="HTML">${fields.input.technologies[5]}</label>
                                         <input id="HTML" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="CSS">${f.input.technologies[6]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="CSS">${fields.input.technologies[6]}</label>
                                         <input id="CSS" type="checkbox">
                                       </div>
-                                      <div>
-                                        <label for="Java">${f.input.technologies[7]}</label>
+                                      <div class="technology-wrap__block">
+                                        <label for="Java">${fields.input.technologies[7]}</label>
                                         <input id="Java" type="checkbox">
                                       </div>
                                    </div>
                                       `
                                 : `<input
-                                type="${f.input.type}" 
+                                type="${fields.input.type}" 
                                 placeholder="${
-                                  f.input.mask !== undefined ? f.input.mask : ""
+                                  fields.input.mask !== undefined
+                                    ? fields.input.mask
+                                    : ""
                                 }${
-                                    f.input.placeholder !== undefined
-                                      ? f.input.placeholder
+                                    fields.input.placeholder !== undefined
+                                      ? fields.input.placeholder
                                       : ""
                                   }"
                                 
-                                required=${f.input.required}
+                                required=${fields.input.required}
                                 accept="${
-                                  f.input.filetype === undefined
+                                  fields.input.filetype === undefined
                                     ? ""
-                                    : f.input.filetype
+                                    : fields.input.filetype
                                         .map(ud => {
                                           return "." + ud;
                                         })
@@ -224,4 +237,4 @@ rend4.onclick = function() {
 rend5.onclick = function() {
   formAddPost.render();
 };
-formColor.render();
+formLogin.render();
