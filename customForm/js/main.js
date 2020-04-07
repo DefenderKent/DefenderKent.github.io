@@ -11,20 +11,24 @@ let dataInterview =
   '{"name":"interview","fields":[{"label":"Введите своё ФИО","input":{"type":"text","required":true,"placeholder":"Иванов Иван Иванович"}},{"label":"Введите Номер телефона","input":{"type":"number","required":true,"mask":"+7 (999) 99-99-999"}},{"label":"Введите свою Почту","input":{"type":"email","required":true,"placeholder":"example@mail.com"}},{"label":"Введите свой возраст","input":{"type":"number","required":true}},{"label":"Введите вашу специальность","input":{"type":"text","required":true}},{"label":"Выберете технологии, с которыми вы работали","input":{"type":"technology","required":true,"technologies":["PHP","JS","Laravel","Express.js","Yii2","HTML","CSS","Java"],"multiple":true}},{"label":"Ваш срок работы","input":{"type":"number","required":true}},{"label":"Ваша фотография","input":{"type":"file","required":true}},{"label":"Серия, номер","input":{"type":"number","required":true,"mask":"99-99 999999"}},{"label":"Код подразделения","input":{"type":"number","required":true,"mask":"999-999"}},{"label":"Скан / Фото паспорта (1 страница)","input":{"type":"file","required":true,"multiple":true,"filetype":["png","jpeg","pdf"]}},{"label":"Расскажите немного о себе","input":{"type":"textarea","required:":true}}],"references":[{"input":{"type":"checkbox","required":true,"checked":"false"}},{"text without ref":"I accept the","text":"Terms & Conditions","ref":"termsandconditions"}],"buttons":[{"text":"Send"},{"text":"Cancel"}]}';
 let dataAddPost =
   '{"name":"addpost","fields":[{"label":"Title","input":{"type":"text","required":true}},{"label":"Description","input":{"type":"textarea","required":true}},{"label":"Image","input":{"type":"file","required":true}},{"label":"Publish Date","input":{"type":"date","required":true}},{"label":"Author","input":{"type":"text"}}],"references":[{"input":{"type":"checkbox","required":true,"checked":"false"}},{"text without ref":"View Author Post","text":"View Author Post","ref":"viewauthor"}],"buttons":[{"text":"Create Post"}]}';
+
+//константы для метода getMask для обработки возможных вариантов
 const numberPhone = "+7 (999) 99-99-999";
 const pasport = "99-99 999999";
 const unitCode = "999-999";
+//класс для формы
 class formCustom {
   constructor(name) {
     this.data = JSON.parse(name);
   }
-
+  // получаем доступ к fields и перебераем все поля
   getInput = () => {
     if (this.data.fields === undefined) {
       return "";
     }
     return this.data.fields.map(this.inputCreator).join("");
   };
+  // обрабатываем все возможные варианты (ВНИМАНИЕ:при добавлении нового fields обработать новое поведение в методе inputCreator)
   inputCreator = fields => {
     const getMask = fields => {
       $(function() {
@@ -79,17 +83,25 @@ class formCustom {
                         <option value=${fields.input.colors[3]}></option>
                       </datalist>
                      
-                  </div> `;
+                  </div>`;
     } else if (fields.label === "Turn on dark theme?") {
       return `<div class="colorCheckbox">
       <label>${fields.label === undefined ? "" : fields.label + ":"}
            </label><input type="${fields.input.type}">
         </div>`;
+    } else if (fields.input.type === "textarea") {
+      return `<div class="inpuTextarea">
+      <label>
+        ${fields.label === undefined ? "" : fields.label + ":"}
+      </label>
+       <textarea placeholder="Enter text"></textarea>
+      </div>`;
     }
 
-    return `<div class="inputcustom"><label>${
-      fields.label === undefined ? "" : fields.label + ":"
-    }</label>
+    return `<div class="inputcustom">
+              <label>
+                ${fields.label === undefined ? "" : fields.label + ":"}
+              </label>
                       ${
                         fields.input.mask !== undefined
                           ? getMask(fields)
@@ -151,13 +163,13 @@ class formCustom {
                                           return "." + ud;
                                         })
                                         .join(", ")
-                                }"/> `
+                                }"/>`
                             }`
                       }                  
                     </div> 
                 `;
   };
-
+  // получаем ссылки
   getReferences = () => {
     if (this.data.references === undefined) {
       return "";
@@ -178,6 +190,7 @@ class formCustom {
       })
       .join("");
   };
+  // получаем имя формы
   getName = () => {
     if (this.data.name === undefined) {
       return "";
@@ -185,7 +198,7 @@ class formCustom {
 
     return `<h2>${this.data.name}</h2>`;
   };
-
+  //получаем все кнопки
   getbutton = () => {
     if (this.data.buttons === undefined) {
       return "";
@@ -196,6 +209,7 @@ class formCustom {
       })
       .join("");
   };
+  //в методе рендер отрисовываем  основную форму
   render() {
     return (document.getElementById("app").innerHTML = `<div>
       <form class="form">
@@ -216,6 +230,7 @@ class formCustom {
   </div>`);
   }
 }
+// создаем экземпляры класса formCustom с нужным вам JSON-ом
 let formColor = new formCustom(dataColor);
 let formLogin = new formCustom(dataLogin);
 let formReg = new formCustom(dataRegister);

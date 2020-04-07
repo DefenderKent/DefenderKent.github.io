@@ -151,4 +151,21 @@ body {
   justify-content: space-between;
   margin-bottom: 10px;
 }
+.inpuTextarea {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  textarea {
+    border: 2px solid #429aff;
+    width: 100%;
+    padding-left: 5px;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+  }
+}
 @import "media";
