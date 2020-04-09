@@ -1,0 +1,31 @@
+.list {
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 10px 12px;
+    &.active {
+      background-color: #fff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+  }
+  i {
+    margin-right: 10px;
+  }
+  .badge {
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    &--green {
+      background-color: #42b883;
+    }
+    &--blue {
+      background-color: #64c4ed;
+    }
+    &--red {
+      background-color: #ffbbcc;
+    }
+  }
+}
