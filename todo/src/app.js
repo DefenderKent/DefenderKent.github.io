@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import style from "./index.module.scss";
-import List from "./components/List/List";
-import listSvg from "./assets/img/list.svg";
+import axios from "axios";
+import { AddButtonList, List, Tasks } from "./components";
+import DB from "./assets/db.json";
 const App = () => {
+  const [lists, setLists] = useState(null);
+  const [colors, setColors] = useState(null);
+  useEffect(() => {
+    axios.get("http://localhost:3001/lists?_expand=color").then(({ data }) => {
+      setLists(data);
+    });
+    axios.get("http://localhost:3001/colors").then(({ data }) => {
+      setColors(data);
+    });
+  }, []);
+
+  const onAddList = (obj) => {
+    const newList = [...lists, obj];
+    setLists(newList);
+  };
+
   return (
     <div className={style.container}>
       <div className={style.todo}>
@@ -28,57 +45,24 @@ const App = () => {
                 name: "Все задачи",
               },
             ]}
-            isRemovable
           />
-          <List
-            items={[
-              {
-                color: "green",
-                name: "Покупки",
-              },
-              {
-                color: "blue",
-                name: "Fronend",
-              },
-              {
-                color: "red",
-                name: "Games",
-              },
-            ]}
-          />
-          <List
-            items={[
-              {
-                icon: (
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8 1V15"
-                      stroke="black"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M1 8H15"
-                      stroke="black"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ),
-                name: "Добавить список",
-              },
-            ]}
-          />
+          {lists ? (
+            <List
+              items={lists}
+              onRemove={(id) => {
+                const newLists = lists.filter((item) => item.id !== id);
+                setLists(newLists);
+              }}
+              isRemovable
+            />
+          ) : (
+            "Занрузка"
+          )}
+          <AddButtonList colors={colors} onAdd={onAddList} />
         </div>
-        <div className={style.todo__tasks}></div>
+        <div className={style.todo__tasks}>
+          <Tasks />
+        </div>
       </div>
       <button>Hellow</button>
     </div>

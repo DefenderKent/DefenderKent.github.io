@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 
+import axios from "axios";
+
 import classNames from "classnames";
 import List from "./../List/List";
-
 import style from "./AddButtonList.scss";
 import closeSvg from "../../assets/img/close.svg";
 import Badge from "../Badge/Badge";
+
 const AddButtonList = ({ colors, onAdd }) => {
-  const [state, setState] = useState(false);
-  const [seletedColor, selectColor] = useState(colors[0].id);
+  const [lists, setLists] = useState(null);
+  const [seletedColor, selectColor] = useState(3);
   const [inputValue, setInputValue] = useState("");
+  useState(() => {
+    if (Array.isArray(colors)) {
+      selectColor(colors[0].id);
+    }
+  }, [colors]);
 
   const onClose = () => {
-    setState(false);
+    setLists(false);
     setInputValue("");
     selectColor(colors[0].id);
   };
@@ -22,18 +29,26 @@ const AddButtonList = ({ colors, onAdd }) => {
       return alert("123");
     }
     const color = colors.filter((c) => c.id === seletedColor)[0].name;
-    onAdd({
-      id: Math.random(),
-      name: inputValue,
-      color,
-    });
+    axios
+      .post("http://localhost:3001/lists", {
+        name: inputValue,
+        colorId: seletedColor,
+      })
+      .then(({ data }) => {
+        console.log(data);
+      });
+    // onAdd({
+    //   id: Math.random(),
+    //   name: inputValue,
+    //   color,
+    // });
     onClose();
   };
 
   return (
     <div className="add-list">
       <List
-        onClick={() => setState(!state)}
+        onClick={() => setLists(!lists)}
         items={[
           {
             className: "list__add-button",
@@ -65,7 +80,7 @@ const AddButtonList = ({ colors, onAdd }) => {
           },
         ]}
       />
-      {state && (
+      {lists && (
         <div className="add-list__popup">
           <img
             onClick={onClose}
