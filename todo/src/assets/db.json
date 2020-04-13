@@ -1,8 +1,24 @@
 {
+  "users": [
+    {
+      "userId": 1,
+      "login": "ivan",
+      "password": "1234",
+      "listsId": 1,
+      "tasksId": 1,
+      "sroch": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
   "lists": [
     {
       "id": 1,
-      "name": "Продажи",
+      "name": "Сходить в магаз",
       "colorId": 5
     },
     {
@@ -14,16 +30,6 @@
       "id": 3,
       "name": "Фильмы и сериалы",
       "colorId": 3
-    },
-    {
-      "id": 4,
-      "name": "Книги",
-      "colorId": 2
-    },
-    {
-      "name": "Игры",
-      "colorId": 2,
-      "id": 5
     }
   ],
   "tasks": [
@@ -31,7 +37,7 @@
       "id": 1,
       "listId": 2,
       "text": "Изучить JavaScript",
-      "completed": true
+      "completed": false
     },
     {
       "id": 2,
@@ -54,7 +60,7 @@
     {
       "listId": 2,
       "text": "123",
-      "completed": true,
+      "completed": false,
       "id": 5
     },
     {
@@ -72,14 +78,8 @@
     {
       "listId": 1,
       "text": "qweqwe",
-      "completed": true,
-      "id": 8
-    },
-    {
-      "listId": 1,
-      "text": "123",
       "completed": false,
-      "id": 9
+      "id": 8
     },
     {
       "listId": 4,
@@ -90,7 +90,7 @@
     {
       "listId": 2,
       "text": "222",
-      "completed": true,
+      "completed": false,
       "id": 12
     }
   ],

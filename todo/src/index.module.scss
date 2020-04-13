@@ -25,6 +25,7 @@ body {
   &__tasks {
     flex: 1;
     padding: 60px;
+    overflow: auto;
   }
 }
 .button {
@@ -39,6 +40,9 @@ body {
   }
   &:active {
     background: darken(#4dd599, 10%);
+  }
+  &:disabled {
+    background: #d8d8d8;
   }
 }
 .field {

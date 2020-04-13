@@ -11,7 +11,9 @@ import Badge from "../Badge/Badge";
 const AddButtonList = ({ colors, onAdd }) => {
   const [lists, setLists] = useState(null);
   const [seletedColor, selectColor] = useState(3);
+  const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState("");
+
   useState(() => {
     if (Array.isArray(colors)) {
       selectColor(colors[0].id);
@@ -29,20 +31,24 @@ const AddButtonList = ({ colors, onAdd }) => {
       return alert("123");
     }
     const color = colors.filter((c) => c.id === seletedColor)[0].name;
+    setIsLoading(true);
     axios
       .post("http://localhost:3001/lists", {
         name: inputValue,
         colorId: seletedColor,
       })
       .then(({ data }) => {
-        console.log(data);
+        const color = colors.filter((c) => c.id === seletedColor)[0];
+        const listObj = { ...data, color, tasks: [] };
+        onAdd(listObj);
+        onClose();
+      })
+      .catch(() => {
+        alert("Ошибка при добавлении списка!");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-    // onAdd({
-    //   id: Math.random(),
-    //   name: inputValue,
-    //   color,
-    // });
-    onClose();
   };
 
   return (
@@ -106,7 +112,7 @@ const AddButtonList = ({ colors, onAdd }) => {
             ))}
           </div>
           <button onClick={addList} className="button">
-            Добавить
+            {isLoading ? "Добавление..." : "Добавить"}
           </button>
         </div>
       )}
