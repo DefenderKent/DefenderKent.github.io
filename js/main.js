@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   particlesJS(
     "particles-js",
 
@@ -8,26 +8,26 @@ $(function() {
           value: 80,
           density: {
             enable: true,
-            value_area: 800
-          }
+            value_area: 800,
+          },
         },
         color: {
-          value: "#ffffff"
+          value: "#ffffff",
         },
         shape: {
           type: "circle",
           stroke: {
             width: 0,
-            color: "#000000"
+            color: "#000000",
           },
           polygon: {
-            nb_sides: 5
+            nb_sides: 5,
           },
           image: {
             src: "img/github.svg",
             width: 100,
-            height: 100
-          }
+            height: 100,
+          },
         },
         opacity: {
           value: 0.5,
@@ -36,8 +36,8 @@ $(function() {
             enable: false,
             speed: 1,
             opacity_min: 0.1,
-            sync: false
-          }
+            sync: false,
+          },
         },
         size: {
           value: 5,
@@ -46,15 +46,15 @@ $(function() {
             enable: false,
             speed: 100,
             size_min: 0.1,
-            sync: false
-          }
+            sync: false,
+          },
         },
         line_linked: {
           enable: true,
           distance: 150,
           color: "#ffffff",
           opacity: 0.4,
-          width: 1
+          width: 1,
         },
         move: {
           enable: true,
@@ -66,47 +66,47 @@ $(function() {
           attract: {
             enable: false,
             rotateX: 600,
-            rotateY: 1200
-          }
-        }
+            rotateY: 1200,
+          },
+        },
       },
       interactivity: {
         detect_on: "canvas",
         events: {
           onhover: {
             enable: true,
-            mode: "repulse"
+            mode: "repulse",
           },
           onclick: {
             enable: true,
-            mode: "push"
+            mode: "push",
           },
-          resize: true
+          resize: true,
         },
         modes: {
           grab: {
             distance: 400,
             line_linked: {
-              opacity: 1
-            }
+              opacity: 1,
+            },
           },
           bubble: {
             distance: 400,
             size: 40,
             duration: 2,
             opacity: 8,
-            speed: 3
+            speed: 3,
           },
           repulse: {
-            distance: 200
+            distance: 200,
           },
           push: {
-            particles_nb: 4
+            particles_nb: 4,
           },
           remove: {
-            particles_nb: 2
-          }
-        }
+            particles_nb: 2,
+          },
+        },
       },
       retina_detect: true,
       config_demo: {
@@ -115,20 +115,20 @@ $(function() {
         background_image: "",
         background_position: "50% 50%",
         background_repeat: "no-repeat",
-        background_size: "cover"
-      }
+        background_size: "cover",
+      },
     }
   );
-  $(document).ready(function() {
-    $("#top").on("click", "a", function(event) {
+  $(document).ready(function () {
+    $("#top").on("click", "a", function (event) {
       event.preventDefault();
       var id = $(this).attr("href"),
         top = $(id).offset().top;
       $("body,html").animate({ scrollTop: top }, 1500);
     });
   });
-  $(document).ready(function() {
-    $("#about").on("click", "a", function(event) {
+  $(document).ready(function () {
+    $("#about").on("click", "a", function (event) {
       event.preventDefault();
       var id = $(this).attr("href"),
         top = $(id).offset().top;
@@ -136,48 +136,30 @@ $(function() {
     });
   });
 });
-$(document).ready(function() {
-  $(window).scroll(function() {
+$(function () {
+  var mixer = mixitup(".customcontainer", {
+    load: { filter: ".category-sale" },
+  });
+});
+$(document).ready(function () {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 0) {
       $("#scroller").fadeIn();
     } else {
       $("#scroller").fadeOut();
     }
   });
-  $("#scroller").click(function() {
+  $("#scroller").click(function () {
     $("body,html").animate(
       {
-        scrollTop: 0
+        scrollTop: 0,
       },
       400
     );
     return false;
   });
 
-  $(".works-slider").slick({
-    dots: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1210,
-        settings: { arrows: false, slidesToShow: 1 }
-      },
-      {
-        breakpoint: 900,
-        settings: { arrows: false, slidesToShow: 1 }
-      },
-      {
-        breakpoint: 720,
-        settings: { arrows: false, slidesToShow: 1, crnterMode: true }
-      }
-
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  });
-  $(document).ready(function() {
+  $(document).ready(function () {
     var navPos, winPos, navHeight;
 
     function refreshVar() {
@@ -193,7 +175,7 @@ $(document).ready(function() {
       .css("height", navHeight)
       .hide();
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
       winPos = $(window).scrollTop();
 
       if (winPos >= navPos) {
@@ -205,10 +187,10 @@ $(document).ready(function() {
       }
     });
   });
-  $(document).ready(function() {
-    var circleProgress = function(selector) {
+  $(document).ready(function () {
+    var circleProgress = function (selector) {
       var wrapper = document.querySelectorAll(selector);
-      Array.prototype.forEach.call(wrapper, function(wrapper, i) {
+      Array.prototype.forEach.call(wrapper, function (wrapper, i) {
         var wrapperWidth,
           wrapperHeight,
           percent,
@@ -227,7 +209,7 @@ $(document).ready(function() {
           strokeStyle,
           text;
 
-        var getValues = function() {
+        var getValues = function () {
           wrapperWidth = parseInt(window.getComputedStyle(wrapper).width);
           wrapperHeight = wrapperWidth;
           percent = wrapper.getAttribute("data-cp-percentage");
@@ -291,28 +273,28 @@ $(document).ready(function() {
           context.strokeStyle = strokeStyle;
           context.stroke();
         }
-        var update = function() {
+        var update = function () {
           getValues();
           animate();
         };
         update();
 
         var btnUpdate = document.querySelectorAll(".btn-update")[0];
-        btnUpdate.addEventListener("click", function() {
+        btnUpdate.addEventListener("click", function () {
           wrapper.setAttribute(
             "data-cp-percentage",
             Math.round(getRandom(5, 95))
           );
           update();
         });
-        wrapper.addEventListener("click", function() {
+        wrapper.addEventListener("click", function () {
           update();
         });
 
         var resizeTimer;
-        window.addEventListener("resize", function() {
+        window.addEventListener("resize", function () {
           clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(function() {
+          resizeTimer = setTimeout(function () {
             clearTimeout(resizeTimer);
             start = new Date().getTime();
             update();
@@ -348,37 +330,37 @@ $(document).ready(function() {
       {
         breakpoint: 1210,
         settings: {
-          slidesToShow: 3
-        }
+          slidesToShow: 3,
+        },
       },
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 2
-        }
+          slidesToShow: 2,
+        },
       },
       {
         breakpoint: 720,
         settings: {
           slidesToShow: 1,
-          crnterMode: true
-        }
-      }
+          crnterMode: true,
+        },
+      },
 
       // You can unslick at a given breakpoint now by adding:
       // settings: "unslick"
       // instead of a settings object
-    ]
+    ],
   });
-  $(".burger-menu").on("click", function() {
+  $(".burger-menu").on("click", function () {
     $(".menu-list").slideToggle();
   });
 
-  $(".popup-content2").on("click", function() {
+  $(".popup-content2").on("click", function () {
     $(".popup-content2").addClass("pop-show");
     $(".popup-content").addClass("pop-show2");
   });
-  $(".btn_popup").on("click", function() {
+  $(".btn_popup").on("click", function () {
     $(".popup-content").removeClass("pop-show2");
   });
 
